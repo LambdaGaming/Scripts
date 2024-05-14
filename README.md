@@ -3,6 +3,5 @@
 
 # Features
 - Currently only works with tar.gz installs, support for deb installs is planned
-- If Discord is added to the PATH, the script will automatically detect the installation directory, otherwise it will prompt the user to enter one
-- After installing, the script will add Discord to the PATH to make future updates easier
+- If Discord is found in the current working directory, the script will install the update to that location, otherwise it will prompt the user to enter a path
 - The script will terminate if the download fails for whatever reason
