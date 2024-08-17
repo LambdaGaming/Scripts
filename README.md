@@ -1,6 +1,12 @@
 # Miscellaneous Scripts
  Various scripts used for a variety of purposes. Below is a list of everything.
 
+## I2C and SPI Dump Examples (DumpExamples.sh)
+- Various example commands for dumping data from I2C and SPI chips using a Raspberry Pi
+
+## Restart KDE Plasma (RestartPlasma.sh)
+- Restarts the KDE Plasma shell, works with version 5.10 and newer
+
 ## Linux System Cleanup (SystemCleanup.sh)
 - Cleans caches, logs, temporary files, and other unnecessary system files
 
