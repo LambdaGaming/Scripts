@@ -4,6 +4,10 @@
 ## I2C and SPI Dump Examples (DumpExamples.sh)
 - Various example commands for dumping data from I2C and SPI chips using a Raspberry Pi
 
+## Save List of Installed Packages (GetInstalledPackages.sh)
+- Saves text files containing a list of packages installed on your system to your downloads folder
+- Supports all major package managers including apt, dnf, flatpak, pacman, and snap
+
 ## Restart KDE Plasma (RestartPlasma.sh)
 - Restarts the KDE Plasma shell, works with version 5.10 and newer
 
