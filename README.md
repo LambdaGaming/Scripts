@@ -45,3 +45,6 @@
 - For a tar.gz installation, if Discord is found in the current working directory, the script will install the update to that location, otherwise it will prompt the user to enter a path
 - The script will terminate if the download fails for whatever reason
 - Useful for when your package manager's version isn't up to date but the app forces you to update
+
+## [Update Python Packages on Windows](scripts/UpdatePythonPackages.ps1)
+- Updates every Python package that was installed through pip on Windows
