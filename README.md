@@ -12,6 +12,13 @@
 - Designed for Jellyfin on Linux, other platforms are untested but might work
 - Requires Python 3.6+ and the humanfriendly module
 
+## [mapcycle.txt Generator](scripts/MapcycleGenerator.py)
+- Generates mapcycle.txt files for GoldSrc and Source engine multiplayer games
+- Reads all .bsp files in the current directory and adds them to the mapcycle.txt file in a random order
+- Half-Life 1 singleplayer maps are ignored
+- Works on Linux, untested on Windows but should work
+- Requires Python 2.5+ or any Python 3 version
+
 ## [Minecraft Cleanup Utility](scripts/MinecraftCleanup.py)
 - Removes log files from Minecraft Java Edition and the Technic Launcher
 - Scans the Minecraft Launcher for Java Edition versions and deletes any versions that aren't found in the list
