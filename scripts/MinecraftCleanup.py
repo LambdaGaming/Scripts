@@ -101,18 +101,18 @@ def DeleteOldMinecraftVersions():
 		print( "No old Minecraft versions found. Skipping..." )
 
 if __name__ == "__main__":
-	checkoverride = "-checkall" in sys.argv
-	print( "Minecraft Cleanup Utility | Copyright (c) 2020-2024 OPGman" )
+	promptBypass = "-y" in sys.argv
+	print( "Minecraft Cleanup Utility | Copyright (c) 2020-2025 OPGman" )
 	GetLatestVersion()
 	ParseJSON()
 	check = input( "Check for Minecraft log files? (y/n)" )
-	if checkoverride or check == "y":
+	if promptBypass or check == "y":
 		DeleteMinecraftLogs( False )
 	check = input( "Check for Technic log files? (y/n)" )
-	if checkoverride or check == "y":
+	if promptBypass or check == "y":
 		DeleteMinecraftLogs( True )
 	check = input( "Check for old Minecraft versions? (y/n)" )
-	if checkoverride or check == "y":
+	if promptBypass or check == "y":
 		DeleteOldMinecraftVersions()
 	print( "Process complete. Press any key to continue..." )
 	input()
