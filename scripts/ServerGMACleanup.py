@@ -32,34 +32,58 @@ if __name__ == "__main__":
 
 	j = json.loads( collectionList.text )
 	children = j["response"]["collectiondetails"][0]["children"] if "children" in j["response"]["collectiondetails"][0] else None
-	print( "Successfully fetched collection info." )
 
 	if children is None:
-		print( "ERROR: Collection was detected, but it contains no content. Make sure the collection is public and try again." )
+		print( "ERROR: Empty collection detected. Make sure it's public and try again." )
 		sys.exit()
 
+	print( "Gathering addon info..." )
 	addonIDs = []
 	for addon in children:
 		addonIDs.append( addon["publishedfileid"] )
 
-	print( "\nSearching game cache..." )
+	addonTxt = vdf.load( open( "garrysmod/cfg/srcds_addons.txt" ) )["srcds_addons"]
+	addonList = []
+	gameCache = []
+	workshopCache = []
+
+	print( "\nScanning game cache..." )
 	for path, dirs, files in os.walk( "garrysmod/cache/srcds" ):
 		for name in files:
 			if os.path.splitext( name )[0] not in addonIDs:
 				finalPath = os.path.join( path, name )
 				TotalSize += os.path.getsize( finalPath )
-				os.remove( finalPath )
-				print( f"Removing addon {finalPath}" )
+				gameCache.append( finalPath )
+				addonList.append( os.path.splitext( name )[0] )
 
-	print( "\nSearching Steam workshop cache..." )
+	print( "\nScanning Steam workshop cache..." )
 	for path, dirs, files in os.walk( "steam_cache/content/4000" ):
 		for name in dirs:
 			if name not in addonIDs:
 				finalPath = os.path.join( path, name )
 				for file in pathlib.Path( finalPath ).rglob( '*' ):
 					TotalSize += file.stat().st_size
-				shutil.rmtree( finalPath )
-				print( f"Removing addon {finalPath}" )
+				workshopCache.append( finalPath )
+				addonList.append( name )
+
+	if len( addonList ) == 0:
+		print( "No unused files detected." )
+		sys.exit()
+
+	print( "The following addons are unused and are no longer required: " )
+	for addon in addonList:
+		name = addonTxt[addon]["name"] if addon in addonTxt else "Unknown Addon"
+		print( f"{name} ({addon})" )
+	
+	if input( "Continue? (y/n)" ) == "n":
+		sys.exit()
+
+	for path in gameCache:
+		os.remove( path )
+		print( f"Removing {path}" )
+	for path in workshopCache:
+		shutil.rmtree( path )
+		print( f"Removing {path}" )
 
 	print( "\nUpdating workshop manifest file..." )
 	acf = vdf.load( open( "steam_cache/appworkshop_4000.acf" ) )
