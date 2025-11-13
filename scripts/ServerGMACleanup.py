@@ -61,17 +61,6 @@ if __name__ == "__main__":
 				shutil.rmtree( finalPath )
 				print( f"Removing addon {finalPath}" )
 
-	if os.path.exists( "userdata" ):
-		print( "\nPurging userdata cache..." )
-		for file in pathlib.Path( "userdata" ).rglob( '*' ):
-			TotalSize += file.stat().st_size
-		shutil.rmtree( "userdata" )
-	if os.path.exists( "depotcache" ):
-		print( "\nPurging depot cache..." )
-		for file in pathlib.Path( "depotcache" ).rglob( '*' ):
-			TotalSize += file.stat().st_size
-		shutil.rmtree( "depotcache" )
-
 	print( "\nUpdating workshop manifest file..." )
 	acf = vdf.load( open( "steam_cache/appworkshop_4000.acf" ) )
 	temp = copy.deepcopy( acf )
