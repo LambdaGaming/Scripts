@@ -23,6 +23,7 @@ if __name__ == "__main__":
 
 	if not os.path.exists( "srcds.exe" ) and not os.path.exists( "srcds_run" ):
 		print( "ERROR: Script is not in root folder of server." )
+		input( "Press any key to continue..." )
 		sys.exit()
 
 	print( "Gathering collection info..." )
@@ -35,6 +36,7 @@ if __name__ == "__main__":
 
 	if children is None:
 		print( "ERROR: Empty collection detected. Make sure it's public and try again." )
+		input( "Press any key to continue..." )
 		sys.exit()
 
 	print( "Gathering addon info..." )
@@ -47,7 +49,7 @@ if __name__ == "__main__":
 	gameCache = []
 	workshopCache = []
 
-	print( "\nScanning game cache..." )
+	print( "Scanning game cache..." )
 	for path, dirs, files in os.walk( "garrysmod/cache/srcds" ):
 		for name in files:
 			if os.path.splitext( name )[0] not in addonIDs:
@@ -56,7 +58,7 @@ if __name__ == "__main__":
 				gameCache.append( finalPath )
 				addonList.append( os.path.splitext( name )[0] )
 
-	print( "\nScanning Steam workshop cache..." )
+	print( "Scanning Steam workshop cache..." )
 	for path, dirs, files in os.walk( "steam_cache/content/4000" ):
 		for name in dirs:
 			if name not in addonIDs:
@@ -68,14 +70,15 @@ if __name__ == "__main__":
 
 	if len( addonList ) == 0:
 		print( "No unused files detected." )
+		input( "Press any key to continue..." )
 		sys.exit()
 
-	print( "The following addons are unused and are no longer required: " )
+	print( "\nThe following addons are unused and are no longer required:" )
 	for addon in addonList:
 		name = addonTxt[addon]["name"] if addon in addonTxt else "Unknown Addon"
 		print( f"{name} ({addon})" )
 	
-	if input( "Continue? (y/n)" ) == "n":
+	if input( "\nContinue? (y/n)" ) == "n":
 		sys.exit()
 
 	for path in gameCache:
