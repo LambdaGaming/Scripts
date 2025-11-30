@@ -12,11 +12,10 @@ sudo apt --fix-broken install
 sudo dpkg --configure -a
 
 # Edit repo sources
+read -p "Enter the codename of your current Debian version: " current
 read -p "Enter the codename of the Debian release you want to switch to: " release
-src1="deb http://raspbian.raspberrypi.org/raspbian/ $release main contrib non-free rpi"
-sudo sed -i "1s/.*/$src1/" /etc/apt/sources.list
-src2="deb http://archive.raspberrypi.com/debian/ $release main"
-sudo sed -i "1s/.*/$src2/" /etc/apt/sources.list.d/raspi.list
+sudo sed -i "s/$current/$release/g" /etc/apt/sources.list
+sudo sed -i "s/$current/$release/g" /etc/apt/sources.list.d/raspi.list
 
 # Start the upgrade
 sudo apt update
