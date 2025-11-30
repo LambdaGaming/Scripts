@@ -25,9 +25,6 @@
 ## [I2C and SPI Dump Examples](scripts/DumpExamples.sh)
  Various example commands for dumping data from I2C and SPI chips.
 
-## [Upgrade Raspberry Pi OS](scripts/UpgradeRaspbian.sh)
- Upgrades Raspberry Pi OS to a specified Debian release. Should work with Debian 9 and newer. Upgrading this way isn't recommened as things could break to the point where reinstalling the whole OS would be easier than trying to fix it, but if you don't have any weird configs or manually installed packages then you'll *probably* be fine. This could probably also be used for vanilla Debian with a few minor tweaks.
-
 # System-Agnostic
 ## [Extract Files From Jellyfin Playlist](scripts/JellyfinPlaylistExtractor.py)
  Extracts files from a specified Jellyfin playlist file. For maximum compatibility with other systems (car radios for example), all files are placed in a single folder and certain characters are stripped from file names. Multiple files with the same name will be renamed to avoid conflicts. Requires Python 3.6+ with the humanfriendly module.
