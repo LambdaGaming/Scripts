@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
 	print( "\nThe following addons are unused and are no longer required:" )
 	for addon in addonList:
-		name = addonTxt[addon]["name"] if addon in addonTxt else "Unknown Addon"
+		name = addonTxt[addon]["name"] if addon in addonTxt and "name" in addonTxt[addon] else "Unknown Addon"
 		print( f"{name} ({addon})" )
 	
 	if input( "\nContinue? (y/n)" ) == "n":
