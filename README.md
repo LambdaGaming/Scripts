@@ -33,7 +33,7 @@
  Generates mapcycle.txt files for GoldSrc and Source engine multiplayer games. It reads all .bsp files in the current directory and adds them to the mapcycle.txt file in a random order. Half-Life 1 singleplayer maps are ignored. Requires Python 2.5+ or any Python 3 version.
 
 ## [Minecraft Cleanup Utility](scripts/MinecraftCleanup.py)
- Scans for log files from Minecraft Java Edition and Technic Launcher, and removes any that are found. Will also delete unused versions of Minecraft Java Edition that aren't found in the version_manifest_v2.json file. You can launch the script with the -y parameter to bypass the prompts. Requires Python 3.6+.
+ Cleans up log files from the Minecraft Launcher, Technic Launcher, and Prism Launcher. Will also delete unused versions of Minecraft Java Edition that aren't found in the version_manifest_v2.json file. Requires Python 3.6+.
 
 ## [Cleanup Unused Gmod Server Addons](scripts/ServerGMACleanup.py)
  Removes unused downloaded GMA files from Garry's Mod dedicated servers, similarly to the menu_cleanup command on the client. References to removed addons are also removed from the appworkshop_4000.acf file to avoid issues downloading them again in the future. The script will prompt for a workshop collection ID and path to the server, but they can also be passed as parameters. The specified workshop collection __must__ be public; any other visibility setting will not work. Requires Python 3.6+ and the humanfriendly, requests, and vdf modules.
