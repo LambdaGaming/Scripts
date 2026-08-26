@@ -40,3 +40,6 @@
 
 ## [Regenerate Expired Steam Server Tokens](scripts/SteamTokenGenerator.py)
  Generates a new Steam server token for each expired token that is found. A Steam app ID and your Steam web API key need to be passed as parameters. Each generated token will be saved to a text file in your documents folder. Requires Python 3.6+ and the requests module.
+
+# Contributing
+ Contributions are welcome! Please read through the [guidelines](https://lambdagaming.github.io/guides/contributing) before submitting an issue or pull request.
