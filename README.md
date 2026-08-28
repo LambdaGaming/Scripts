@@ -25,7 +25,7 @@
 ## [I2C and SPI Dump Examples](scripts/DumpExamples.sh)
  Various example commands for dumping data from I2C and SPI chips.
 
-# System-Agnostic
+# OS-Agnostic
 ## [Extract Files From Jellyfin Playlist](scripts/JellyfinPlaylistExtractor.py)
  Extracts files from a specified Jellyfin playlist file. For maximum compatibility with other systems (car radios for example), all files are placed in a single folder and certain characters are stripped from file names. Multiple files with the same name will be renamed to avoid conflicts. Requires Python 3.6+ with the humanfriendly module.
 
@@ -40,6 +40,9 @@
 
 ## [Regenerate Expired Steam Server Tokens](scripts/SteamTokenGenerator.py)
  Generates a new Steam server token for each expired token that is found. A Steam app ID and your Steam web API key need to be passed as parameters. Each generated token will be saved to a text file in your documents folder. Requires Python 3.6+ and the requests module.
+
+## [Songsterr Auto Clicker](scripts/SongsterrClicker.js)
+ TamperMonkey script that automatically clicks popups on Songsterr. It does NOT block the popup from appearing; it can still appear for up to 1 second each time. Only tested on Firefox but should work on any browser.
 
 # Contributing
  Contributions are welcome! Please read through the [guidelines](https://lambdagaming.github.io/guides/contributing) before submitting an issue or pull request.
