@@ -2,9 +2,6 @@
 ## [Save List of Installed Packages](scripts/GetInstalledPackages.sh)
  Saves text files containing a list of packages installed on your system to your downloads folder. Supports all major package managers including apt, dnf, flatpak, pacman, and snap.
 
-## [Restart KDE Plasma](scripts/RestartPlasma.sh)
- Restarts the KDE Plasma shell. Works with version 5.10 and newer.
-
 ## [System Cleanup](scripts/SystemCleanup.sh)
  Cleans caches, logs, temporary files, and other unnecessary system files.
 
@@ -13,13 +10,6 @@
 
 ## [Update Arch Mirrors](scripts/UpdateMirrors.sh)
  Updates and ranks the Pacman mirror list using Reflector, then refreshes all packages. Has optional support for EndeavourOS using the eos-rankmirrors tool.
-
-# Windows
-## [OSDATA Bluescreen Demo](scripts/OSDATADemo.bat)
- Demonstrates how an improperly formatted OSDATA system config file can cause a bluescreen on startup. It creates the file, writes garbage data to it, then reboots Windows. The effect can be reverted by deleting the created OSDATA file through the recovery settings. This only works on Windows 10 and 11, and needs to be run as admin if you're not already on an admin account.
-
-## [Update Python Packages](scripts/UpdatePythonPackages.ps1)
- Updates every Python package that was installed through pip.
 
 # Raspberry Pi
 ## [I2C and SPI Dump Examples](scripts/DumpExamples.sh)
