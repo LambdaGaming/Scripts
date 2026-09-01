@@ -69,8 +69,8 @@ def DeleteLogs():
 	# Technic
 	print( "Checking for Technic logs..." )
 	logPath = TechnicPath + "/logs"
-	getFiles = os.listdir( logPath )
 	if os.path.exists( logPath ):
+		getFiles = os.listdir( logPath )
 		for file in getFiles:
 			SafeRemoveFile( os.path.join( logPath, file ) )
 	modpackPath = TechnicPath + "/modpacks"
@@ -85,8 +85,8 @@ def DeleteLogs():
 	# Prism Launcher
 	print( "Checking for Prism Launcher logs..." )
 	logPath = PrismPath + "/logs"
-	getFiles = os.listdir( logPath )
 	if os.path.exists( logPath ):
+		getFiles = os.listdir( logPath )
 		for file in getFiles:
 			SafeRemoveFile( os.path.join( logPath, file ) )
 	instancePath = PrismPath + "/instances"
