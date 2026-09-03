@@ -96,8 +96,8 @@ def DeleteLogs():
 			if instance == ".tmp" or not os.path.isdir( f"{instancePath}/{instance}" ):
 				continue
 			instanceLogPath = f"{instancePath}/{instance}/minecraft/logs"
-			logs = os.listdir( instanceLogPath )
 			if os.path.exists( instanceLogPath ):
+				logs = os.listdir( instanceLogPath )
 				for l in logs:
 					SafeRemoveFile( os.path.join( instanceLogPath, l ) )
 
