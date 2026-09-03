@@ -11,6 +11,9 @@
 ## [Update Arch Mirrors](scripts/UpdateMirrors.sh)
  Updates and ranks the Pacman mirror list using Reflector, then refreshes all packages. Has optional support for EndeavourOS using the eos-rankmirrors tool.
 
+## [yt-dlp Wrapper](scripts/YtdlpWrapper.sh)
+ Simple wrapper script for yt-dlp that automatically handles multiple URLs and output file formatting. All files are output to ~/Downloads.
+
 # Raspberry Pi
 ## [I2C and SPI Dump Examples](scripts/DumpExamples.sh)
  Various example commands for dumping data from I2C and SPI chips.
