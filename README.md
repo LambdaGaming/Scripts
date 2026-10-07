@@ -14,6 +14,9 @@
 ## [yt-dlp Wrapper](scripts/YtdlpWrapper.sh)
  Simple wrapper script for yt-dlp that automatically handles multiple URLs and output file formatting. All files are output to ~/Downloads.
 
+## [Wake Server](scripts/WakeServer.sh)
+ Wakes up (or turns on) a server using wake-on-LAN, and monitors a specific port to detect when the server is ready to be used. Only works on devices that have wake-on-LAN enabled in the BIOS/UEFI, as well as for the network interface at the OS-level. Three parameters must be filled out in the script for it to work: The target device's IP address, MAC address, and port number.
+
 # Raspberry Pi
 ## [I2C and SPI Dump Examples](scripts/DumpExamples.sh)
  Various example commands for dumping data from I2C and SPI chips.
